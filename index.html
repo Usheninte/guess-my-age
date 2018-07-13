@@ -18,7 +18,7 @@
   
   <script type="text/babel">
   
-    class GuessAge extends React.Component {
+    /* class GuessAge extends React.Component {
       constructor(props) {
         super(props);
         this.state = {
@@ -37,6 +37,30 @@
             <h1>Guessing Game</h1>
             <h3>{this.state.age}</h3>
             <button onClick={this.onButtonClick}>reveal my age</button>
+          </div>
+        );
+      }
+    } */
+
+    //code refactor - using bind() in function
+    class GuessAge extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          age: 'Guess My Age'
+        };
+      }
+      onButtonClick() {
+        this.setState({
+          age: '20'
+        });
+      }
+      render() {
+        return(
+          <div>
+            <h1>Guessing Game</h1>
+            <h3>{this.state.age}</h3>
+            <button onClick={this.onButtonClick.bind(this)}>reveal my age</button>
           </div>
         );
       }
