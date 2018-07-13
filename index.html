@@ -24,13 +24,19 @@
         this.state = {
           age: 'Guess My Age'
         };
+        this.onButtonClick = this.onButtonClick.bind(this);
+      }
+      onButtonClick() {
+        this.setState({
+          age: '20'
+        });
       }
       render() {
         return(
           <div>
             <h1>Guessing Game</h1>
             <h3>{this.state.age}</h3>
-            <button>reveal my age</button>
+            <button onClick={this.onButtonClick}>reveal my age</button>
           </div>
         );
       }
